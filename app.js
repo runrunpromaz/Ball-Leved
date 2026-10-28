@@ -3,7 +3,14 @@ const canvas=document.querySelector('#game'),ctx=canvas.getContext('2d');
 const $=id=>document.getElementById(id);
 const COLORS=['#ff657b','#49d8ff','#ffd45e','#a884ff','#65e3a0'];
 const R=17,DX=34,DY=Math.sqrt(3)*R,COLS=11,ROWS=19,TOP=36,DEATH=535;
-const PACKS=[{id:'ballleved_5',n:5,price:5},{id:'ballleved_7',n:7,price:7},{id:'ballleved_10',n:10,price:10},{id:'ballleved_13',n:13,price:13}];
+
+const PACKS=[
+{id:'ballleved_5plays',n:5,price:4.99},
+{id:'ballleved_7plays',n:7,price:6.99},
+{id:'ballleved_10plays',n:10,price:9.99},
+{id:'ballleved_13plays',n:13,price:12.99}
+];
+
 const KEY='ball-leved-v1';
 let save;try{save=JSON.parse(localStorage.getItem(KEY))||{plays:2,best:0}}catch{save={plays:2,best:0}}
 function persist(){localStorage.setItem(KEY,JSON.stringify(save));$('plays').textContent=save.plays;$('best').textContent=save.best}
